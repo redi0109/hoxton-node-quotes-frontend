@@ -2,3 +2,15 @@
   text-align: center;
 }
 
+.App ul{
+  list-style: none;
+}
+
+.authorImg{
+  width: 40%;
+}
+
+.authorDetails{
+  border: 3px black solid;
+  width: 50%;
+}

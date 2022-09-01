@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Quotes from "./pages/Quotes";
 
 export type Quote = {
   id: number;
-  quote: string;
-  author: string;
+ 
+  author: {
+    name: string;
+    quote: string;
+    age: number;
+    image: string;
+}
 };
 
 function App() {
@@ -17,6 +24,10 @@ function App() {
   }, [])
 
   return <div className="App">
+     <Routes>
+     <Route index element={<Navigate to="/quotes"/>} />
+            <Route path="/quotes" element={<Quotes quotes={quotes} />} />
+        </Routes>
    
   </div>;
 }
